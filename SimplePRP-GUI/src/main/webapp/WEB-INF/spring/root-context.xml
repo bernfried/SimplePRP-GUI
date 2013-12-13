@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:beans="http://www.springframework.org/schema/beans"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <!-- Root Context: defines shared resources visible to all other web components -->
+
+  <!-- General -->
+  <beans:import resource="classpath:spring/spring-general.xml"/>
+
+  <!-- Security -->
+  <beans:import resource="classpath:spring/spring-security.xml"/>
+
+  <!-- Database & Transaction -->
+  <beans:import resource="classpath:spring/spring-database.xml"/>
+
+</beans:beans>

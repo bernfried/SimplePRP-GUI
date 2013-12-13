@@ -1,0 +1,29 @@
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+  <definition name="basic" template="/WEB-INF/views/layouts/basic.jsp">
+  	<put-attribute name="head" value="/WEB-INF/views/common/head.jsp"/>
+  	<put-attribute name="header" value="/WEB-INF/views/common/header.jsp"/>
+  	<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp"/>
+  	<put-attribute name="foot" value="/WEB-INF/views/common/foot.jsp"/>
+  </definition>
+
+  <definition name="basicLogin" template="/WEB-INF/views/layouts/basicLogin.jsp">
+  	<put-attribute name="head" value="/WEB-INF/views/common/headLogin.jsp"/>
+  	<put-attribute name="header" value="/WEB-INF/views/common/header.jsp"/>
+  	<put-attribute name="foot" value="/WEB-INF/views/common/foot.jsp"/>
+  </definition>
+
+  <definition name="home" extends="basic">
+  	<put-attribute name="content" value="/WEB-INF/views/internal/home/content.jsp"/>
+  </definition>
+
+  <definition name="profile" extends="basic">
+  	<put-attribute name="content" value="/WEB-INF/views/internal/user/profile/content.jsp"/>
+  </definition>
+
+  <definition name="login" extends="basicLogin">
+  	<put-attribute name="content" value="/WEB-INF/views/public/login/content.jsp"/>
+  </definition>
+
+</tiles-definitions>

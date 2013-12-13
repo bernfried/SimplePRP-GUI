@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans
+  xmlns:beans="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:mvc="http://www.springframework.org/schema/mvc"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:util="http://www.springframework.org/schema/util"
+  xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+  <!-- Enables the Spring MVC @Controller programming model -->
+  <mvc:annotation-driven/>
+
+  <!-- registers automatically all Spring standard post-processors for annotation based configuration -->
+  <context:annotation-config/>
+
+  <!-- Scans all classes of the base package + sub-packages for beans -->
+  <context:component-scan base-package="de.webertise.simpleprpgui"/>
+
+  <!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+  <mvc:resources
+    mapping="/resources/**"
+    location="/resources/"/>
+
+  <!-- Properties -->
+  <beans:bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <beans:property
+      name="ignoreResourceNotFound"
+      value="true"/>
+    <beans:property name="locations">
+      <beans:list>
+        <beans:value>classpath:simpleprp.properties</beans:value>
+        <beans:value>file:${user.home}${file.separator}.SimplePRP${file.separator}simpleprp.properties</beans:value>
+      </beans:list>
+    </beans:property>
+    <beans:property name="properties">
+      <beans:props>
+        <beans:prop key="jdbc.driver"/>
+        <beans:prop key="jdbc.url"/>
+        <beans:prop key="jdbc.user"/>
+        <beans:prop key="jdbc.pwd"/>
+      </beans:props>
+    </beans:property>
+  </beans:bean>
+
+</beans:beans>
