@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import de.webertise.simpleprpgui.exception.UserNotFound;
 import de.webertise.simpleprpgui.model.User;
-import de.webertise.simpleprpgui.service.impl.UserService;
+import de.webertise.simpleprpgui.service.IUserService;
 
 /**
  * Handles requests for the application home page.
@@ -29,7 +29,7 @@ public class UserController {
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @Autowired
-    private UserService userService;
+    private IUserService userService;
 
     @RequestMapping(value = "profile", method = RequestMethod.GET)
     public String profile(Locale locale, Model model, HttpSession session) {
@@ -63,20 +63,4 @@ public class UserController {
 
         return "profile";
     }
-
-    /**
-     * @return the userService
-     */
-    public UserService getUserService() {
-        return this.userService;
-    }
-
-    /**
-     * @param userService
-     *            the userService to set
-     */
-    public void setUserService(UserService userService) {
-        this.userService = userService;
-    }
-
 }
