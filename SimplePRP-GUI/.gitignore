@@ -1,2 +1,7 @@
 /target
 /Users
+/bin
+/.classpath
+/.project
+/.springBeans
+/.settings
