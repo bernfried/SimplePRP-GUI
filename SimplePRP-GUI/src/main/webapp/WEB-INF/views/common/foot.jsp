@@ -4,3 +4,5 @@
 <script src="${resourceUrl}/js/jquery.js"></script>
 <script src="${resourceUrl}/js/bootstrap.min.js"></script>
 <script src="${resourceUrl}/js/holder.js"></script>
+<script src="${resourceUrl}/js/angular.min.js"></script>
+<script src="${resourceUrl}/js/custom.js"></script>

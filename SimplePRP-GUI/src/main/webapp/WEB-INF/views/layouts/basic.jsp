@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="simplePrpApp">
 	<head>
 		<tiles:insertAttribute name="head"/>
 	</head>
