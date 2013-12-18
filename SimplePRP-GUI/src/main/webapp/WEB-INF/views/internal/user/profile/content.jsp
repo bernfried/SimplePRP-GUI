@@ -10,10 +10,7 @@
 		<spring:message code="profile.headline" />
 	</h2>
 
-	<spring:url var="profileUpdateUrl"
-		value="/internal/user/profile/{{user.id}}"></spring:url>
-	<form:form action="${profileUpdateUrl}" method="post"
-		class="form-horizontal">
+	<form class="form-horizontal">
 
 		<div class="form-group">
 			<label class="col-sm-2 control-label" for="id"><spring:message
@@ -75,12 +72,13 @@
 		</div>
 
 		<div style="border-top: 2px solid #000; margin-top:15px; padding-top:15px;">
-			<button type="submit" class="btn btn-success">
+		    <spring:url var="homeUrl" value="/internal/home"></spring:url>
+			<a href="${homeUrl}" class="btn btn-primary">
+				<spring:message code="profile.button.cancel"></spring:message>
+			</a>
+			<button class="btn btn-success" ng-click="save()">
 				<spring:message code="profile.button.save"></spring:message>
 			</button>
-			<button type="button" class="btn btn-primary">
-				<spring:message code="profile.button.cancel"></spring:message>
-			</button>
 		</div>
-	</form:form>
+	</form>
 </div>

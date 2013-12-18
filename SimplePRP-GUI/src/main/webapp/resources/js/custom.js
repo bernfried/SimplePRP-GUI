@@ -9,4 +9,8 @@ simplePrpApp.controller('UserCtrl', function($scope, $http) {
 		});
 	};
 	
+	$scope.save = function() {
+		alert("Save user...");
+	};
+	
 });
