@@ -6,10 +6,10 @@
 	<artifactId>simpleprpgui</artifactId>
 	<name>simpleprpgui</name>
 	<packaging>war</packaging>
-	<version>1.0.0-BUILD-SNAPSHOT</version>
+	<version>1.0.1-BUILD-SNAPSHOT</version>
 	<properties>
 		<java-version>1.6</java-version>
-        <war.name>simpleprpgui</war.name>
+                <war.name>simpleprpgui</war.name>
 		<org.springframework-version>3.2.4.RELEASE</org.springframework-version>
 		<org.springframework-security-version>3.1.4.RELEASE</org.springframework-security-version>
 		<org.springframework-data-version>1.4.1.RELEASE</org.springframework-data-version>
