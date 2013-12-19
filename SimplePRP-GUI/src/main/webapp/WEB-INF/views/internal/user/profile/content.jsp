@@ -10,8 +10,8 @@
 		<spring:message code="profile.headline" />
 	</h2>
 
-  	<div ng-if="exceptionResponse.code < 0" class="alert alert-danger">Error: {{exceptionResponse.description}}</div>
-  	<div ng-if="exceptionResponse.code == 0" class="alert alert-success">Info: {{exceptionResponse.description}}</div>
+  	<div ng-if="retCode != '0' && retCode != ''" class="alert alert-danger">{{ 'USER_UPDATE_RESPONSE_CODE_' + retCode | translate }}</div>
+  	<div ng-if="retCode == '0'" class="alert alert-success">{{ 'USER_UPDATE_RESPONSE_CODE_0' | translate }}</div>
 
 	<form class="form-horizontal">
 
