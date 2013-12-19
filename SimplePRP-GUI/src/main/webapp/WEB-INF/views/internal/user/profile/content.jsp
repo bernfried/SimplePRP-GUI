@@ -10,6 +10,9 @@
 		<spring:message code="profile.headline" />
 	</h2>
 
+  	<div ng-if="exceptionResponse.code < 0" class="alert alert-danger">Error: {{exceptionResponse.description}}</div>
+  	<div ng-if="exceptionResponse.code == 0" class="alert alert-success">Info: {{exceptionResponse.description}}</div>
+
 	<form class="form-horizontal">
 
 		<div class="form-group">
@@ -24,32 +27,28 @@
 			<label class="col-sm-2 control-label" for="username"><spring:message
 					code="profile.username" /></label>
 			<div class="col-sm-6">
-				<input class="form-control" id="username" name="username"
-					value="{{user.username}}" disabled />
+				<input class="form-control" id="username" ng-model="user.username" disabled />
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="col-sm-2 control-label" for="firstName"><spring:message
 					code="profile.firstName" /></label>
 			<div class="col-sm-6">
-				<input class="form-control" id="firstName" name="firstName"
-					value="{{user.firstName}}" />
+				<input class="form-control" id="firstName" ng-model="user.firstName" />
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="col-sm-2 control-label" for="lastName"><spring:message
 					code="profile.lastName" /></label>
 			<div class="col-sm-6">
-				<input class="form-control" id="lastName" name="lastName"
-					value="{{user.lastName}}" />
+				<input type="text" class="form-control" id="lastName" ng-model="user.lastName" />
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="col-sm-2 control-label" for="email"><spring:message
 					code="profile.email" /></label>
 			<div class="col-sm-6">
-				<input type="email" class="form-control" id="email" name="email"
-					value="{{user.email}}" />
+				<input type="email" class="form-control" id="email" ng-model="user.email" />
 			</div>
 		</div>
 
